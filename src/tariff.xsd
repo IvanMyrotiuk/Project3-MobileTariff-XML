@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+            xmlns="http://Myrotiuk.com/defaultNameSpaceTariff"
+            targetNamespace="http://Myrotiuk.com/defaultNameSpaceTariff"
+           elementFormDefault="qualified"
+            xmlns:myspace = "http://Myrotiuk.com/callPrices">
+    <xs:import schemaLocation="myspace.xsd" namespace="http://Myrotiuk.com/callPrices"/>
+    <xs:element name="tariff">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name = "mobile-tariff"  maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name = "name" type ="xs:string"/>
+                           <!-- <myspace:name type = "myspace:TNamestring"/> -->  <!--type = "myspace:TNamestring"-->
+                            <xs:element name = "operator" type = "xs:string"/>
+                            <xs:element name = "price" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name = "payroll">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:double">
+                                                    <xs:minInclusive value="0"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name = "sms">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:double">
+                                                    <xs:minInclusive value="0"/>
+                                                    <xs:maxInclusive value="0.95"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name = "call-prices" type = "myspace:typeCallPrice"/>
+                                                 
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name = "parameters">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name = "tariffing" type = "TariffType"/>
+                                        <xs:element name = "paymentToConnectTariff" >
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:double">
+                                                    <xs:minInclusive value="0"/>
+                                                    <xs:maxInclusive value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>  
+                        </xs:sequence>
+                        <xs:attribute type="xs:integer" name="id" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="TariffType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value = "minutes"/>
+            <xs:enumeration value = "12-seconds"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

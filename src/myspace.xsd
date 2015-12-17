@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           elementFormDefault="qualified" 
+           targetNamespace="http://Myrotiuk.com/callPrices">
+    <!--
+    <xs:complexType name="TNamestring">
+        <xs:sequence>
+            <xs:element name = "name" type = "xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    -->
+    <xs:complexType name="typeCallPrice">
+        <xs:sequence>
+            <xs:element name = "in-network" type = "xs:double"/>
+            <xs:element name = "out-network" type = "xs:double"/>    
+            <xs:element name = "to-stationary" type = "xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

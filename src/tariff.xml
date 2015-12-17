@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="tariff_html.xsl"?>
+<tariff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://Myrotiuk.com/defaultNameSpaceTariff"
+        xsi:schemaLocation="http://Myrotiuk.com/defaultNameSpaceTariff tariff.xsd"
+        xmlns:myspace = "http://Myrotiuk.com/callPrices">
+    <mobile-tariff id = "1">
+        <name>3D null Center</name>
+        <!-- <myspace:name>3D null Center</myspace:name>-->
+        <operator>MTS</operator>
+        <price>
+            <payroll>0</payroll>
+            <sms>0.50</sms>
+            <call-prices>
+                <myspace:in-network>0.30</myspace:in-network>
+                <myspace:out-network>0.50</myspace:out-network>
+                <myspace:to-stationary>0.45</myspace:to-stationary>
+            </call-prices>
+        </price>
+        <parameters>
+            <tariffing>minutes</tariffing>
+            <paymentToConnectTariff>50</paymentToConnectTariff>
+        </parameters>
+    </mobile-tariff>
+    <mobile-tariff id = "2">
+        <name>3D Ukrain</name>
+        <operator>MTS</operator>
+        <price>
+            <payroll>10</payroll>
+            <sms>0.40</sms>
+            <call-prices>
+                <myspace:in-network>0.30</myspace:in-network>
+                <myspace:out-network>0.70</myspace:out-network>
+                <myspace:to-stationary>0.45</myspace:to-stationary>
+            </call-prices>
+        </price>
+        <parameters>
+            <tariffing>12-seconds</tariffing>
+            <paymentToConnectTariff>40</paymentToConnectTariff>
+        </parameters>
+    </mobile-tariff>
+    <mobile-tariff id = "3">
+        <name>Together</name>
+        <operator>Life</operator>
+        <price>
+            <payroll>2</payroll>
+            <sms>0.10</sms>
+            <call-prices>
+                <myspace:in-network>0.20</myspace:in-network>
+                <myspace:out-network>0.30</myspace:out-network>
+                <myspace:to-stationary>0.35</myspace:to-stationary>
+            </call-prices>
+        </price>
+        <parameters>
+            <tariffing>minutes</tariffing>
+            <paymentToConnectTariff>0</paymentToConnectTariff>
+        </parameters>
+    </mobile-tariff>
+</tariff>
